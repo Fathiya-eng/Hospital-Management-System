@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{B2077AB5-2C71-354F-580A-B4E62A617E34}|Hospital Management System\\Hospital Management System.csproj|solutionrelative:hospital management system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2077AB5-2C71-354F-580A-B4E62A617E34}|Hospital Management System\\Hospital Management System.csproj|c:\\users\\fathi\\onedrive\\documents\\swiq-solution\\hospital management system\\hospital management system\\models\\medicalrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2077AB5-2C71-354F-580A-B4E62A617E34}|Hospital Management System\\Hospital Management System.csproj|solutionrelative:hospital management system\\models\\medicalrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B2077AB5-2C71-354F-580A-B4E62A617E34}|Hospital Management System\\Hospital Management System.csproj|c:\\users\\fathi\\onedrive\\documents\\swiq-solution\\hospital management system\\hospital management system\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2077AB5-2C71-354F-580A-B4E62A617E34}|Hospital Management System\\Hospital Management System.csproj|solutionrelative:hospital management system\\models\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,12 +19,16 @@
       "RelativeMoniker": "D:0:0:{B2077AB5-2C71-354F-580A-B4E62A617E34}|Hospital Management System\\Hospital Management System.csproj|solutionrelative:hospital management system\\models\\availableslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2077AB5-2C71-354F-580A-B4E62A617E34}|Hospital Management System\\Hospital Management System.csproj|c:\\users\\fathi\\onedrive\\documents\\swiq-solution\\hospital management system\\hospital management system\\hospitalcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2077AB5-2C71-354F-580A-B4E62A617E34}|Hospital Management System\\Hospital Management System.csproj|solutionrelative:hospital management system\\hospitalcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B2077AB5-2C71-354F-580A-B4E62A617E34}|Hospital Management System\\Hospital Management System.csproj|c:\\users\\fathi\\onedrive\\documents\\swiq-solution\\hospital management system\\hospital management system\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2077AB5-2C71-354F-580A-B4E62A617E34}|Hospital Management System\\Hospital Management System.csproj|solutionrelative:hospital management system\\models\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2077AB5-2C71-354F-580A-B4E62A617E34}|Hospital Management System\\Hospital Management System.csproj|c:\\users\\fathi\\onedrive\\documents\\swiq-solution\\hospital management system\\hospital management system\\models\\medicalrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2077AB5-2C71-354F-580A-B4E62A617E34}|Hospital Management System\\Hospital Management System.csproj|solutionrelative:hospital management system\\models\\medicalrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2077AB5-2C71-354F-580A-B4E62A617E34}|Hospital Management System\\Hospital Management System.csproj|c:\\users\\fathi\\onedrive\\documents\\swiq-solution\\hospital management system\\hospital management system\\hospitalcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2077AB5-2C71-354F-580A-B4E62A617E34}|Hospital Management System\\Hospital Management System.csproj|solutionrelative:hospital management system\\hospitalcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -52,11 +52,11 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "HospitalContext.cs",
               "DocumentMoniker": "C:\\Users\\fathi\\OneDrive\\Documents\\swiq-solution\\Hospital Management System\\Hospital Management System\\HospitalContext.cs",
               "RelativeDocumentMoniker": "Hospital Management System\\HospitalContext.cs",
@@ -64,12 +64,11 @@
               "RelativeToolTip": "Hospital Management System\\HospitalContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T04:31:12.508Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-14T04:31:12.508Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "AvailableSlot.cs",
               "DocumentMoniker": "C:\\Users\\fathi\\OneDrive\\Documents\\swiq-solution\\Hospital Management System\\Hospital Management System\\Models\\AvailableSlot.cs",
               "RelativeDocumentMoniker": "Hospital Management System\\Models\\AvailableSlot.cs",
@@ -82,20 +81,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "MedicalRecord.cs",
               "DocumentMoniker": "C:\\Users\\fathi\\OneDrive\\Documents\\swiq-solution\\Hospital Management System\\Hospital Management System\\Models\\MedicalRecord.cs",
               "RelativeDocumentMoniker": "Hospital Management System\\Models\\MedicalRecord.cs",
               "ToolTip": "C:\\Users\\fathi\\OneDrive\\Documents\\swiq-solution\\Hospital Management System\\Hospital Management System\\Models\\MedicalRecord.cs",
               "RelativeToolTip": "Hospital Management System\\Models\\MedicalRecord.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T04:30:39.853Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-14T04:30:39.853Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Appointment.cs",
               "DocumentMoniker": "C:\\Users\\fathi\\OneDrive\\Documents\\swiq-solution\\Hospital Management System\\Hospital Management System\\Models\\Appointment.cs",
               "RelativeDocumentMoniker": "Hospital Management System\\Models\\Appointment.cs",
@@ -108,7 +106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Doctor.cs",
               "DocumentMoniker": "C:\\Users\\fathi\\OneDrive\\Documents\\swiq-solution\\Hospital Management System\\Hospital Management System\\Models\\Doctor.cs",
               "RelativeDocumentMoniker": "Hospital Management System\\Models\\Doctor.cs",
@@ -121,15 +119,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Patient.cs",
               "DocumentMoniker": "C:\\Users\\fathi\\OneDrive\\Documents\\swiq-solution\\Hospital Management System\\Hospital Management System\\Models\\Patient.cs",
               "RelativeDocumentMoniker": "Hospital Management System\\Models\\Patient.cs",
               "ToolTip": "C:\\Users\\fathi\\OneDrive\\Documents\\swiq-solution\\Hospital Management System\\Hospital Management System\\Models\\Patient.cs",
               "RelativeToolTip": "Hospital Management System\\Models\\Patient.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA9wCEAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-14T04:29:51.132Z"
+              "WhenOpened": "2026-06-14T04:29:51.132Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -137,22 +136,12 @@
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\fathi\\OneDrive\\Documents\\swiq-solution\\Hospital Management System\\Hospital Management System\\Program.cs",
               "RelativeDocumentMoniker": "Hospital Management System\\Program.cs",
-              "ToolTip": "C:\\Users\\fathi\\OneDrive\\Documents\\swiq-solution\\Hospital Management System\\Hospital Management System\\Program.cs*",
-              "RelativeToolTip": "Hospital Management System\\Program.cs*",
-              "ViewState": "AgIAAJABAAAAAAAAAAAowI8BAAAnAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\fathi\\OneDrive\\Documents\\swiq-solution\\Hospital Management System\\Hospital Management System\\Program.cs",
+              "RelativeToolTip": "Hospital Management System\\Program.cs",
+              "ViewState": "AgIAAGgCAAAAAAAAAADwv2ECAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-14T04:28:54.062Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 332,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }
