@@ -7,7 +7,16 @@ namespace Hospital_Management_System
 {
     public class Program
     {
-        public static void PatientRegistration(List<Patient> patients) // 01
+        public static HospitalContext context = new HospitalContext
+        {
+            Patients = new List<Patient>(),
+            Doctors = new List<Doctor>(),
+            Appointments = new List<Appointment>(),
+            MedicalRecords = new List<MedicalRecord>(),
+            AvailableSlots = new List<AvailableSlot>()
+        }; 
+
+        public static void PatientRegistration() // 01
         {
 
             Console.WriteLine("Enter patient Name");
@@ -28,26 +37,26 @@ namespace Hospital_Management_System
             Console.WriteLine("Enter patient Blood Type");
             string patientBloodType = Console.ReadLine();
 
-            int patientId = patients.Count + 1;
+            int patientId = context.Patients.Count + 1;
 
-            //context.Patients.Add(new Patient
-            //{
-            //    patientId = patientId,
-            //    patientName = patientName,
-            //    patientAge = patientAge,
-            //    patientGender = patientGender,
-            //    patientPhone = patientPhone,
-            //    patientEmail = patientEmail,
-            //    patientBloodType = patientBloodType
+            context.Patients.Add(new Patient
+            {
+                patientId = patientId,
+                patientName = patientName,
+                patientAge = patientAge,
+                patientGender = patientGender,
+                patientPhone = patientPhone,
+                patientEmail = patientEmail,
+                patientBloodType = patientBloodType
 
-            //});
-            patients.Add(new Patient(patientId, patientName, patientAge, patientGender, patientPhone, patientEmail, patientBloodType));
+            });
+            //patients.Add(new Patient(patientId, patientName, patientAge, patientGender, patientPhone, patientEmail, patientBloodType));
 
             Console.WriteLine($"Patient registered successfully.. ID = {patientId}");
 
         }
 
-        public static void AddNewDoctor(HospitalContext context) // 02 
+        public static void AddNewDoctor() // 02 
         {
 
             Console.WriteLine("Enter doctor Name");
@@ -81,7 +90,7 @@ namespace Hospital_Management_System
             Console.WriteLine($"Doctor registered successfully.. ID: {doctorId}");
         }
 
-        public static void ViewAllPatients(HospitalContext context) // 03 
+        public static void ViewAllPatients() // 03 
         {
             if (context.Patients.Count == 0)
             {
@@ -108,7 +117,7 @@ namespace Hospital_Management_System
 
         }
 
-        public static void ViewAllDoctorsbySpecialization(HospitalContext context) // 04 
+        public static void ViewAllDoctorsbySpecialization() // 04 
         {
             Console.WriteLine("Enter Specialization:");
             string doctorSpecialization = Console.ReadLine();
@@ -150,7 +159,7 @@ namespace Hospital_Management_System
             }
         }
 
-        public static void AddAvailableSlot(HospitalContext context) // 05 
+        public static void AddAvailableSlot() // 05 
         {
 
             if (context.Doctors.Count == 0)
@@ -192,7 +201,7 @@ namespace Hospital_Management_System
             Console.WriteLine("Slot Added Successfully");
         }
 
-        public static void BookAppointment(HospitalContext context) // 06  
+        public static void BookAppointment() // 06  
         {
 
             Console.WriteLine("Enter Patient ID:");
@@ -206,7 +215,7 @@ namespace Hospital_Management_System
                 return;
             }
 
-            ViewAllDoctorsbySpecialization(context);
+            ViewAllDoctorsbySpecialization();
 
             Console.WriteLine("Enter Doctor ID to book with:");
             int doctorId = Convert.ToInt32(Console.ReadLine());
@@ -302,7 +311,7 @@ namespace Hospital_Management_System
             Console.WriteLine($"Appointment Booked Successfully .. Appointment ID: {appointmentId} | Date: {selectSlot.slotDate} | Time: {selectSlot.slotTime}");
         }
 
-        public static void CancelAppointment(HospitalContext context) // 07 
+        public static void CancelAppointment() // 07 
         {
             Console.WriteLine("Enter Appointment ID:");
             int appointmentId = Convert.ToInt32(Console.ReadLine());
@@ -366,7 +375,7 @@ namespace Hospital_Management_System
             Console.WriteLine($"Appointment {appointmentId} has been Cancelled");
         }
 
-        public static void CreateMedicalRecord(HospitalContext context) // 08 
+        public static void CreateMedicalRecord() // 08 
         {
 
             Console.WriteLine("Enter Appointment ID:");
@@ -449,7 +458,7 @@ namespace Hospital_Management_System
             Console.WriteLine("Medical Record Created");
         }
 
-        public static void PatientMedicalHistoryReport(HospitalContext context) // 09
+        public static void PatientMedicalHistoryReport() // 09
         {
             Console.WriteLine("Enter Patient ID:");
             int patientId = Convert.ToInt32(Console.ReadLine());
@@ -523,7 +532,7 @@ namespace Hospital_Management_System
             #endregion
         }
 
-        public static void DoctorRevenueSummary(HospitalContext context) // 10 
+        public static void DoctorRevenueSummary() // 10 
         {
             if (context.Appointments.Count == 0)
             {
@@ -600,25 +609,42 @@ namespace Hospital_Management_System
             #endregion
         }
 
-        public static decimal CalculatePatientDiscount(HospitalContext context, int patientId, decimal visitFee) // 11
+        public static void CalculatePatientDiscount(HospitalContext context) // 11
         {
-            int visitsCount = context.MedicalRecords.Count(r => r.patientId == patientId);
+            Console.WriteLine("Enter Patient ID:");
+            int patientId = Convert.ToInt32(Console.ReadLine());
 
-            if (visitsCount >= 1)
+            Patient patient = context.Patients.FirstOrDefault(p => p.patientId == patientId);
+
+            if (patient == null)
             {
-                decimal originalFee = visitFee;
-
-                visitFee = visitFee - 5;
-
-                Console.WriteLine($"Original Fee = {originalFee}");
-                Console.WriteLine($"Discount = 5 OMR");
-                Console.WriteLine($"{originalFee} - 5 = {visitFee}");
+                Console.WriteLine("Patient Not Found");
+                return;
             }
 
-            return visitFee;
+            int visitsCount = context.MedicalRecords.Count(r => r.patientId == patientId);
+
+            if (visitsCount >= 5)
+            {
+
+                MedicalRecord lastRecord = context.MedicalRecords.Where(r => r.patientId == patientId)
+                                                                 .OrderByDescending(r => r.recordId)
+                                                                 .FirstOrDefault();
+
+                decimal consultationFee = lastRecord.visitFee;
+
+                decimal visitFee = consultationFee - 5;
+
+                Console.WriteLine($"Patient Name = {patient.patientName}");
+                Console.WriteLine($"Number Of Visits = {visitsCount}");
+                Console.WriteLine($"Original Fee = {consultationFee}");
+                Console.WriteLine($"Discount = 5 OMR");
+                Console.WriteLine($"{consultationFee} - 5 = {visitFee}");
+
+            }
         }
 
-        public static void DisplayTopDoctor(HospitalContext context) // 12
+        public static void DisplayTopDoctor() // 12
         {
 
             if (context.Doctors.Count == 0)
@@ -655,21 +681,6 @@ namespace Hospital_Management_System
 
         static void Main(string[] args)
         {
-            HospitalContext context = new HospitalContext();
-            context.Appointments = new List<Appointment>();
-            context.Doctors = new List<Doctor>();
-            context.AvailableSlots = new List<AvailableSlot>();
-            context.MedicalRecords = new List<MedicalRecord>();
-
-            //seed data
-            context.Patients = new List<Patient>()
-            {
-                new Patient(1,"Fathiya",30,"Fmale","9129","F@gmail.com","O+"),
-                new Patient(2, "Ebtesam", 25, "Fmale", "9043", "E@gmail.com", "O-"),
-                new Patient(3, "Wedad", 25, "Fmale", "9443", "W@gmail.com", "A+"),
-                new Patient(4, "Malak", 25, "Fmale", "9896", "M@gmail.com", "A+")
-
-             };
 
             bool exit = false;
             while (exit == false)
@@ -696,43 +707,43 @@ namespace Hospital_Management_System
                 switch (option)
                 {
                     case 1:
-                        PatientRegistration(context.Patients);
+                        PatientRegistration();
                         break;
 
                     case 2:
-                        AddNewDoctor(context);
+                        AddNewDoctor();
                         break;
 
                     case 3:
-                        ViewAllPatients(context);
+                        ViewAllPatients();
                         break;
 
                     case 4:
-                        ViewAllDoctorsbySpecialization(context);
+                        ViewAllDoctorsbySpecialization();
                         break;
 
                     case 5:
-                        AddAvailableSlot(context);
+                        AddAvailableSlot();
                         break;
 
                     case 6:
-                        BookAppointment(context);
+                        BookAppointment();
                         break;
 
                     case 7:
-                        CancelAppointment(context);
+                        CancelAppointment();
                         break;
 
                     case 8:
-                        CreateMedicalRecord(context);
+                        CreateMedicalRecord();
                         break;
 
                     case 9:
-                        PatientMedicalHistoryReport(context);
+                        PatientMedicalHistoryReport();
                         break;
 
                     case 10:
-                        DoctorRevenueSummary(context);
+                        DoctorRevenueSummary();
                         break;
 
                     case 0:
